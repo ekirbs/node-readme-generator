@@ -34,7 +34,7 @@ function renderLicenseSection(data) {
     return `
   ## License
 
-  This application is covered by the ${data.projectLicense} license.
+  This application is covered by the ${data.projectLicense} license.<br>
   ${renderLicenseLink(data)}
   `
   } else {
@@ -86,7 +86,7 @@ function generateMarkdown(data) {
   
   ## Questions
   
-  Github: [${data.userGithub}](https://github.com/${data.userGithub})
+  Github: [${data.userGithub}](https://github.com/${data.userGithub})<br>
   Email: [${data.userEmail}](mailto:user@example.com)`
 
 }
