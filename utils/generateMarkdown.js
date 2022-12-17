@@ -1,58 +1,51 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(projectLicense) {
-  if (projectLicense !== 'N/A') {
-    return `![License: ${projectLicense}](https://img.shields.io/badge/License-${projectLicense}-blue.svg)`;
+// RENDER LICENSE BADGE FUNCTION
+function renderLicenseBadge(hello) {
+  if (data.projectLicense !== 'N/A') {
+    return `![License: ${data.projectLicense}](https://img.shields.io/badge/License-${data.projectLicense}-blue.svg)`;
   } else {
     return '';
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(projectLicense) {
-  if (projectLicense !== 'N/A') {
+// RENDER LICENSE LINK FUNCTION
+function renderLicenseLink(data) {
+  if (data.projectLicense !== 'N/A') {
     return `(https://opensource.org/licenses/Apache-2.0)`;
-  } else if (projectLicense === 'ISC') {
+  } else if (data.projectLicense === 'ISC') {
     return `(https://opensource.org/licenses/ISC)`;
-  } else if (projectLicense === 'MIT') {
+  } else if (data.projectLicense === 'MIT') {
     return `(https://opensource.org/licenses/MIT)`;
-  } else if (projectLicense === 'MPL_2.0') {
+  } else if (data.projectLicense === 'MPL_2.0') {
     return `(https://opensource.org/licenses/MPL-2.0)`;
-  } else if (projectLicense === 'AGPL_v3') {
+  } else if (data.projectLicense === 'AGPL_v3') {
     return `(https://www.gnu.org/licenses/agpl-3.0)`;
-  } else if (projectLicense === 'GPLv3') {
+  } else if (data.projectLicense === 'GPLv3') {
     return `(https://www.gnu.org/licenses/gpl-3.0)`;
-  } else if (projectLicense === 'Unlicense') {
+  } else if (data.projectLicense === 'Unlicense') {
     return `(http://unlicense.org/)`;
   } else {
     return '';
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(projectLicense) {
-  if (projectLicense !== 'N/A') {
+// RENDER LICENSE SECTION FUNCTION
+function renderLicenseSection(data) {
+  if (data.projectLicense !== 'N/A') {
     return `
   ## License
 
-  This application is covered by the ${projectLicense} license.
+  This application is covered by the ${data.projectLicense} license.
   `
   } else {
     return ``
   }
 }
 
-// let licenseBadge = renderLicenseBadge();
-// let licenseLink = renderLicenseLink();
-// let licenseSection = renderLicenseSection();
-
+// GENERATE README MARKDOWN FUNCTION
 function generateMarkdown(data) {
   return`# ${data.projectTitle}
   
-  ![License: ${data.projectLicense}](https://img.shields.io/badge/License-${data.projectLicense}-blue.svg)
-  ${renderLicenseBadge()}${renderLicenseLink()}
+  ${renderLicenseBadge(data)}${renderLicenseLink(data)}
 
   ## Description
   
@@ -77,7 +70,7 @@ function generateMarkdown(data) {
   ## Credits
   
   ${data.projectCredits}
-  ${renderLicenseSection()}
+  ${renderLicenseSection(data)}
   ## Features
   
   ${data.projectFeatures}
