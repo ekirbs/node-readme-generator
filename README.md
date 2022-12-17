@@ -19,7 +19,7 @@ This program requires installation of inquirer npm.
 
 To use this program, first open index.js in the intergrated terminal.  Then install the npm inquirer v8.2.4.  When this is done, run index in node and answer all the questions when prompted.  After all questions are answered, a README file populated with the information given in the prompts will be generated into the output folder.  
 
-![Tutorial.](./assets/images/tutor-vid.mp4)
+![Tutorial](https://drive.google.com/file/d/18uNeHv05wGY35vBR_tvXYeI9UG4WWjT-/view?usp=share_link)
 
 ## Credits
 
