@@ -1,5 +1,5 @@
 // RENDER LICENSE BADGE FUNCTION
-function renderLicenseBadge(hello) {
+function renderLicenseBadge(data) {
   if (data.projectLicense !== 'N/A') {
     return `![License: ${data.projectLicense}](https://img.shields.io/badge/License-${data.projectLicense}-blue.svg)`;
   } else {
@@ -35,6 +35,7 @@ function renderLicenseSection(data) {
   ## License
 
   This application is covered by the ${data.projectLicense} license.
+  ${renderLicenseLink(data)}
   `
   } else {
     return ``
@@ -45,7 +46,7 @@ function renderLicenseSection(data) {
 function generateMarkdown(data) {
   return`# ${data.projectTitle}
   
-  ${renderLicenseBadge(data)}${renderLicenseLink(data)}
+  ${renderLicenseBadge(data)}
 
   ## Description
   
